@@ -1,37 +1,38 @@
 
 package com.hackathon.cardboardsense;
 
-        import android.os.Bundle;
-        import android.os.Handler;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.FrameLayout;
-        import android.widget.Toast;
-        import android.app.Activity;
-        import android.os.AsyncTask;
-        import android.os.Handler;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.view.Menu;
-        import android.view.MenuItem;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
-        import java.io.BufferedReader;
-        import java.io.DataInputStream;
-        import java.io.IOException;
-        import java.io.InputStreamReader;
-        import java.net.InetAddress;
-        import java.net.InetSocketAddress;
-        import java.net.NetworkInterface;
-        import java.net.ServerSocket;
-        import java.net.Socket;
-        import java.net.SocketException;
-        import java.util.ArrayList;
-        import java.util.Arrays;
-        import java.util.Enumeration;
-        import java.util.List;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
+import java.util.List;
 
 
-        import com.unity3d.player.UnityPlayer;
+import com.unity3d.player.UnityPlayer;
 
 
 public class FullscreenActivity
@@ -44,9 +45,6 @@ public class FullscreenActivity
 
     // DEFAULT IP
     public static String SERVERIP = "192.168.137.1";
-
-    // DESIGNATE A PORT
-//    public static final int SERVERPORT = 9999;
 
     private Handler handler = new Handler();
 
@@ -65,8 +63,14 @@ public class FullscreenActivity
         super.onStop();
         try {
             // MAKE SURE YOU CLOSE THE SOCKET UPON EXITING
-            serverSocketRight.close();
-            serverSocketLeft.close();
+            if (serverSocketRight!=null) {
+                serverSocketRight.close();
+            }
+            if (serverSocketLeft!=null) {
+                serverSocketLeft.close();
+            }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -110,7 +114,6 @@ public class FullscreenActivity
     }
 
 
-
     public class ServerThread implements Runnable {
         // DESIGNATE A PORT
         private int port;
@@ -121,9 +124,11 @@ public class FullscreenActivity
         public ServerThread(boolean leftOrRight, int port) {
             this.leftOrRight = leftOrRight;
             this.port = port;
-            this.serverSocket = (leftOrRight==RIGHT)?serverSocketRight:serverSocketLeft;
+            this.serverSocket = (leftOrRight == RIGHT) ? serverSocketRight : serverSocketLeft;
         }
 
+
+        private String oldString;
 
         public void run() {
             try {
@@ -131,6 +136,8 @@ public class FullscreenActivity
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+                            Log.i(FullscreenActivity.this.getClass().getSimpleName(), "Listening on IP: " + SERVERIP);
+//
 //                            serverStatus.setText("Listening on IP: " + SERVERIP);
                         }
                     });
@@ -141,33 +148,38 @@ public class FullscreenActivity
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
+                                Log.i(FullscreenActivity.this.getClass().getSimpleName(), "Connected");
 //                                serverStatus.setText("Connected.");
                             }
                         });
 
                         try {
-                            DataInputStream dis = new DataInputStream(client.getInputStream());
-                            final List<Float> floatList = new ArrayList<>();
-                            float f = dis.readFloat();
-//                            BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+//                            DataInputStream dis = new DataInputStream(client.getInputStream());
+//                            final List<Float> floatList = new ArrayList<>();
+//                            float f = dis.read();
+
+
+                            BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 //                            float float = null;
                             int checker = 0;
-                            while (f != 0 || true) {
-
-                                Log.d("ServerActivity", "" + f);
-                                f = dis.readFloat();
-                                floatList.add(f);
-                                if (floatList.size() == FLOATS_PER_FRAME) {
-                                    final List<Float> handFrame = new ArrayList<>(floatList);
-                                    floatList.clear();
+                            while ( true) {
+                                final String s= in.readLine();
+                                Log.d("ServerActivity", "" + s);
+//                                f = dis.readFloat();
+//                                floatList.add(f);
+//                                if (floatList.size() == FLOATS_PER_FRAME) {
+                                  if (true) {
+                                      oldString=s;
+//                                    final List<Float> handFrame = new ArrayList<>(floatList);
+//                                    floatList.clear();
                                     new Thread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            StringBuilder sb = new StringBuilder();
-                                            for (float f : handFrame) {
-                                                sb.append(f).append(" ");
-                                            }
-                                            sendStringRepresentationOfHandFrameToUnity(sb.toString(), leftOrRight);
+//                                            StringBuilder sb = new StringBuilder();
+//                                            for (float f : handFrame) {
+//                                                sb.append(f).append(" ");
+//                                            }
+                                            sendStringRepresentationOfHandFrameToUnity(s, leftOrRight);
 
                                         }
                                     }).start();
@@ -179,7 +191,8 @@ public class FullscreenActivity
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
-//                                    serverStatus.setText("Oops. Connection interrupted. Please reconnect your phones.");
+                                    Log.i(FullscreenActivity.this.getClass().getSimpleName(), "Oops. Connection interrupted. Please reconnect your phones.");
+
                                 }
                             });
                             e.printStackTrace();
@@ -189,7 +202,8 @@ public class FullscreenActivity
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-//                            serverStatus.setText("Couldn't detect internet connection.");
+                            Log.i(FullscreenActivity.this.getClass().getSimpleName(), "Couldn't detect internet connection.");
+
                         }
                     });
                 }
@@ -197,7 +211,7 @@ public class FullscreenActivity
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-//                        serverStatus.setText("Error");
+                        Log.i(FullscreenActivity.this.getClass().getSimpleName(), "Error");
                     }
                 });
                 e.printStackTrace();
