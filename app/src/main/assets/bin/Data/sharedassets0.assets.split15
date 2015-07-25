@@ -1,4 +1,7 @@
-m 	mat4 glstate_matrix_projection;
+t4 _World2Object;
+uniform 	vec4 unity_LODFade;
+uniform 	mat4 glstate_matrix_transpose_modelview0;
+uniform 	mat4 glstate_matrix_projection;
 uniform 	lowp vec4 glstate_lightmodel_ambient;
 uniform 	mat4 unity_MatrixV;
 uniform 	mat4 unity_MatrixVP;
