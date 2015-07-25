@@ -2,60 +2,60 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\skozyrev\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-53255312589bfa7684d554b03e8d6f872d638f35.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\libs\unitycardboardactivity.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="2d9f8067ac1d9ca437d02a0cd71d320c8400ea16">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\unitycardboardactivity-d59c401e0e443df38d5e6dc73e67ddf9c69e0626.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\libs\unityvractivity.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d981bc0320ce2fc85d3f3b8397a9317385ccc7bb">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\unityvractivity-d557447725c35ab5b81c0a44ca52c37bd2ba085c.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\libs\vrtoolkit.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="08545b40cbeaed822ae54779adbce1d186f78f25">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\vrtoolkit-3655874fed8199d31b609c82089dad79ac739523.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\classes-fb9b1f814d0c422e93517e0a2c2dc87c9a55a179.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\libs\unity-classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ecebd98da2f1e39f3f79a78d84d72acf036adc4">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\unity-classes-a8d29c7ca9ee6f781c71c48ded862b6265f47c78.jar" />
-    </item>
-    <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\libs\libprotobuf-java-2.6-nano.jar"
+        jar="/Users/sergey/Development/CardboardSense/app/libs/libprotobuf-java-2.6-nano.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="ef76109f47af41f3e8448756aa177852a3a2a288">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\libprotobuf-java-2.6-nano-9bf3eaaa613e4caaf07cdbbc50710122055170ba.jar" />
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/libprotobuf-java-2.6-nano-0b6102df138b16d6f1a3f39f28b38417745c5d9c.jar" />
     </item>
     <item
-        jar="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jar="/Users/sergey/Development/CardboardSense/app/libs/unity-classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ecebd98da2f1e39f3f79a78d84d72acf036adc4">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/unity-classes-9757ec2f204d7a45225fbde280209ff7cee9ee93.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/Development/CardboardSense/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\skozyrev\StudioProjects\CardboardSense\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-ce7786f2bba8a008efcd920fbd981ec7b0d9b4a9.jar" />
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-6b0b7b4c49b0add1a8e6ffc05120f18aad2c8e1e.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/.artifactory_cache/cross-tools-unpacked/darwin/android-sdk-24.0.1/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-b11708ab7ae9ba2b337e51f4f9b11a14bed1ba1c.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/Development/CardboardSense/app/libs/unitycardboardactivity.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2d9f8067ac1d9ca437d02a0cd71d320c8400ea16">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/unitycardboardactivity-f48633439cd63d828cc6620357477cd0ce6d95a3.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/Development/CardboardSense/app/libs/vrtoolkit.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="08545b40cbeaed822ae54779adbce1d186f78f25">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/vrtoolkit-5e3d547d0fc4964a2d05ff4455bb9c5aa03d9bf6.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/Development/CardboardSense/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/classes-2ea8de1420dc8761053ae69ff67fa9fcea245ed9.jar" />
+    </item>
+    <item
+        jar="/Users/sergey/Development/CardboardSense/app/libs/unityvractivity.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d981bc0320ce2fc85d3f3b8397a9317385ccc7bb">
+        <dex dex="/Users/sergey/Development/CardboardSense/app/build/intermediates/pre-dexed/debug/unityvractivity-8275d28cb7f5a95b5948542b6ba1c141123ade95.jar" />
     </item>
 
 </items>
