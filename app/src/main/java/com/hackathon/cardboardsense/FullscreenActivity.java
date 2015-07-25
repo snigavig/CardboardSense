@@ -1,36 +1,37 @@
+
 package com.hackathon.cardboardsense;
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.Toast;
-import android.app.Activity;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+        import android.os.Bundle;
+        import android.os.Handler;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.FrameLayout;
+        import android.widget.Toast;
+        import android.app.Activity;
+        import android.os.AsyncTask;
+        import android.os.Handler;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.view.Menu;
+        import android.view.MenuItem;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.NetworkInterface;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.List;
+        import java.io.BufferedReader;
+        import java.io.DataInputStream;
+        import java.io.IOException;
+        import java.io.InputStreamReader;
+        import java.net.InetAddress;
+        import java.net.InetSocketAddress;
+        import java.net.NetworkInterface;
+        import java.net.ServerSocket;
+        import java.net.Socket;
+        import java.net.SocketException;
+        import java.util.ArrayList;
+        import java.util.Arrays;
+        import java.util.Enumeration;
+        import java.util.List;
 
 
-import com.unity3d.player.UnityPlayer;
+        import com.unity3d.player.UnityPlayer;
 
 
 public class FullscreenActivity
@@ -173,7 +174,7 @@ public class FullscreenActivity
                                 }
 
                             }
-                            break;
+                            //break;
                         } catch (Exception e) {
                             handler.post(new Runnable() {
                                 @Override
