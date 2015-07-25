@@ -1,4 +1,10 @@
-entGround;
+m 	mat4 glstate_matrix_projection;
+uniform 	lowp vec4 glstate_lightmodel_ambient;
+uniform 	mat4 unity_MatrixV;
+uniform 	mat4 unity_MatrixVP;
+uniform 	lowp vec4 unity_AmbientSky;
+uniform 	lowp vec4 unity_AmbientEquator;
+uniform 	lowp vec4 unity_AmbientGround;
 uniform 	lowp vec4 unity_FogColor;
 uniform 	vec4 unity_FogParams;
 uniform 	vec4 unity_LightmapST;
