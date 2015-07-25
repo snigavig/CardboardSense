@@ -19,7 +19,7 @@ public class FullscreenActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Toast.makeText(this, "hahahahaha!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "hahahahahfd!", Toast.LENGTH_LONG).show();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
